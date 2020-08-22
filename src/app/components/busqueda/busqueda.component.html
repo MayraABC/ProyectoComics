@@ -1,24 +1,16 @@
-<h1>Héroes <small>Marvel y DC</small></h1>
+<h1>
+    Buscando por: <small>{{ texto }}</small>
+</h1>
 <hr />
-<p>Resultado de la búsqueda</p>
-<div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let itemHeroe of list; let i = index">
-        <img class="card-img-top img-fluid" [alt]="itemHeroe.nombre" [src]="itemHeroe.img" />
-        <div class="card-body">
-            <h5 class="card-title">{{ itemHeroe.nombre }}</h5>
-            <p class="card-text">{{ itemHeroe.bio }}</p>
-            <p class="card-text">
-                <small class="text-muted">{{ itemHeroe.aparicion }}</small>
-            </p>
 
-            <!-- Esta es la forma usando el botón -->
-            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
-        Ver más...
-      </button>
-
-            <!-- Esta es la forma usando ROUTERLINK
-              /heroe Es el nombre que se le dió a la ruta en el app.routes.ts --
-            <a [routerLink]="['/heroe', i]" class="btn button-outline-primary">Ver más...</a -->
+<div class="row animated fadeIn fast" *ngIf="list.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados para: {{ texto }}
         </div>
     </div>
+</div>
+
+<div class="card-columns">
+    <app-heroe-tarjeta [itemHeroe]="item" [idx]="item.idx" *ngFor="let item of list"></app-heroe-tarjeta>
 </div>

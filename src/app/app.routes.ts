@@ -3,11 +3,6 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
-
-/* import { Name2Component } from './';
-import { Name3Component } from './';
-import { Name4Component } from './';
-import { PageNotFoundComponent } from './'; */
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 const APP_ROUTES: Routes = [

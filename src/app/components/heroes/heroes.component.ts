@@ -12,13 +12,13 @@ export class HeroesComponent implements OnInit {
   porque es la que tiene la información que se quiere mostrar */
   heroes: HeroeInterface[] = [];
 
-  constructor(private _heroesService: HeroesService, private _router: Router) {}
+  constructor(private heroesService: HeroesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.heroes = this._heroesService.getHeroes();
+    this.heroes = this.heroesService.getHeroes();
   }
 
-  verHeroe(idx: number): any {
-    this._router.navigate(['/heroe', idx]);
-  }
+  /* verHeroe(idx: number): any {
+    this.router.navigate(['/heroe', idx]);
+  } */
 }

@@ -11,21 +11,22 @@ import { Router } from '@angular/router';
 export class BusquedaComponent implements OnInit {
   // El arreglo de los items encontrados.
   list: HeroeInterface[] = [];
+  texto: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private heroesService: HeroesService,
     private router: Router
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
+      this.texto = params.txt;
       this.list = this.heroesService.buscarHeroes(params.txt);
     });
   }
 
-  ngOnInit(): void {}
-
   verHeroe(idx: number): any {
-    console.log(idx + 'ajaaaa');
     this.router.navigate(['/heroe', idx]);
   }
 }

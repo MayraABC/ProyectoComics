@@ -23,7 +23,6 @@ export class HeroeComponent {
 
       // Este heroe hace referencia a la variable creada al inicio.
       this.heroe = this.heroesService.getHeroe(params.id);
-      console.log(this.heroe);
     });
   }
 }

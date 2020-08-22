@@ -2,23 +2,9 @@
 <hr />
 
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let itemHeroe of heroes; let i = index">
-        <img class="card-img-top img-fluid" [alt]="itemHeroe.nombre" [src]="itemHeroe.img" />
-        <div class="card-body">
-            <h5 class="card-title">{{ itemHeroe.nombre }}</h5>
-            <p class="card-text">{{ itemHeroe.bio }}</p>
-            <p class="card-text">
-                <small class="text-muted">{{ itemHeroe.aparicion }}</small>
-            </p>
-
-            <!-- Esta es la forma usando el botón -->
-            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
-        Ver más...
-      </button>
-
-            <!-- Esta es la forma usando ROUTERLINK
-              /heroe Es el nombre que se le dió a la ruta en el app.routes.ts --
-            <a [routerLink]="['/heroe', i]" class="btn button-outline-primary">Ver más...</a -->
-        </div>
-    </div>
+    <!-- Componente de la tarjeta del heroe 
+    $event, es para recibir a fuerza el evento que está emitiendo desde el heroeSeleccionado,
+    desde el método verHeroe() ==> this.heroeSeleccionado.emit(this.idx); 
+    Es decir el $event tomará el valor que tenga this.idx-->
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [itemHeroe]="item" [idx]="i" *ngFor="let item of heroes; let i = index"></app-heroe-tarjeta>
 </div>

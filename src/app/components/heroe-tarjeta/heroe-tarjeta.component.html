@@ -1,0 +1,19 @@
+<div class="card animated fadeIn fast">
+    <img class="card-img-top img-fluid" [alt]="itemHeroe.nombre" [src]="itemHeroe.img" />
+    <div class="card-body">
+        <h5 class="card-title">{{ itemHeroe.nombre }}</h5>
+        <p class="card-text">{{ itemHeroe.bio }}</p>
+        <p class="card-text">
+            <small class="text-muted">{{ itemHeroe.aparicion }}</small>
+        </p>
+
+        <!-- Esta es la forma usando el botón -->
+        <button (click)="verHeroe()" type="button" class="btn btn-outline-primary btn-block">
+      Ver más...
+    </button>
+
+        <!-- Esta es la forma usando ROUTERLINK
+          /heroe Es el nombre que se le dió a la ruta en el app.routes.ts --
+        <a [routerLink]="['/heroe', i]" class="btn button-outline-primary">Ver más...</a -->
+    </div>
+</div>
