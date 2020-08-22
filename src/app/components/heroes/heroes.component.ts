@@ -18,8 +18,7 @@ export class HeroesComponent implements OnInit {
     this.heroes = this._heroesService.getHeroes();
   }
 
-  // tslint:disable-next-line: typedef
-  verHeroe(idx: number) {
+  verHeroe(idx: number): any {
     this._router.navigate(['/heroe', idx]);
   }
 }

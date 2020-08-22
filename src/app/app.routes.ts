@@ -8,6 +8,7 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 import { Name3Component } from './';
 import { Name4Component } from './';
 import { PageNotFoundComponent } from './'; */
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 const APP_ROUTES: Routes = [
   { path: 'inicio', component: HomeComponent },
@@ -16,6 +17,7 @@ const APP_ROUTES: Routes = [
   /* Ruta para la página de descripción del heroe al que
       se le debe pasar el identificador como parámetro*/
   { path: 'heroe/:id', component: HeroeComponent },
+  { path: 'heroe/buscar/:txt', component: BusquedaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'inicio' },
   /*{ path: '**', component: PageNotFoundComponent }, */
 ];

@@ -69,8 +69,22 @@ export class HeroesService {
     return this.heroes;
   }
 
+  // idx, es el identificador del heroe
   getHeroe(idx: number): HeroeInterface {
     return this.heroes[idx];
+  }
+
+  buscarHeroes(texto: string): HeroeInterface[] {
+    console.log('Entreeeee al servicio!!!!!');
+    const heroesArr: HeroeInterface[] = [];
+    texto = texto.toLowerCase();
+    for (const item of this.heroes) {
+      const nombre = item.nombre.toLowerCase();
+      if (nombre.indexOf(texto) >= 0) {
+        heroesArr.push(item);
+      }
+    }
+    return heroesArr;
   }
 }
 
